@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Programming Refusal with Conditional Activation Steering</title>
+    <meta name="description" content="Enabling context-dependent, rule-based modifications to model outputs without altering weights" />
+    <meta property="og:title" content="Programming Refusal with Conditional Activation Steering" />
+    <meta property="og:url" content="https://brucewlee.com/research/cas" />
+    <meta property="og:description" content="Enabling context-dependent, rule-based modifications to model outputs without altering weights" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Programming Refusal with Conditional Activation Steering" />
+    <meta name="twitter:description" content="Enabling context-dependent, rule-based modifications to model outputs without altering weights" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    
+    <style>
+        :root {
+            --background: #fff;
+            --text: #333;
+            --link: #007bff;
+            --border: #dee2e6;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nd-pageheader {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .lead {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        address {
+            font-style: normal;
+            margin-bottom: 20px;
+        }
+
+        address a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        .resource-links {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .resource-links a {
+            display: inline-block;
+            padding: 15px;
+            margin: 0 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        figure {
+            margin: 40px 0;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .citation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        pre {
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .widenobr {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="nd-pageheader">
+        <div class="container">
+            <h1 class="lead">
+                <nobr class="widenobr">Programming Refusal</nobr>
+                <nobr class="widenobr">with Conditional Activation Steering</nobr>
+            </h1>
+            <address>
+                <nobr><a href="https://brucewlee.com/" target="_blank">Bruce W. Lee</a><sup>1</sup>,</nobr>
+                <nobr><a href="https://www.linkedin.com/in/marcus-lee-a103b5275/" target="_blank">Marcus Lee</a><sup>2</sup>,</nobr>
+                <nobr><a href="https://datascience.columbia.edu/people/david-blei/" target="_blank">David M. Blei</a><sup>1</sup></nobr>
+                <br>
+                <nobr><sup>1</sup><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a>,</nobr>
+                <nobr><sup>2</sup><a href="https://www.research.ibm.com/" target="_blank">IBM Research</a></nobr>
+            </address>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="resource-links">
+            <a href="https://arxiv.org/abs/2409.05907" target="_blank">
+                <img src="/images/paper-thumb.png" alt="Paper" style="width:78px; height:100px; border:1px solid #ddd;">
+                <br>Paper
+            </a>
+            <a href="https://github.com/IBM/activation-steering" target="_blank">
+                <img src="/images/github-thumb.png" alt="Code" style="width:78px; height:100px; border:1px solid #ddd;">
+                <br>Code
+            </a>
+            <a href="https://www.lesswrong.com/posts/HiG479grQtkut7svb/paper-programming-refusal-with-conditional-activation" target="_blank">
+                <img src="/images/blog-thumb.png" alt="Blog" style="width:78px; height:100px; border:1px solid #ddd;">
+                <br>Blog Post
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Can we make language models follow behavioral rules without altering weights?</h3>
+            <p>
+                Large language models have emerged as powerful tools for various applications, but controlling their behavior 
+                remains challenging. While existing approaches often require model retraining or weight modifications, we 
+                introduce Conditional Activation Steering (CAS) - a method that enables real-time, rule-based control of 
+                model outputs without changing the model weights.
+            </p>
+        </div>
+
+        <h2>How does it work?</h2>
+        <figure>
+            <img src="/path/to/method-diagram.png" alt="Method diagram">
+            <figcaption>
+                Overview of Conditional Activation Steering (CAS). Given a condition and desired output modification, 
+                CAS calculates steering vectors that can be applied to intermediate activations to achieve the desired behavior.
+            </figcaption>
+        </figure>
+
+        <div class="citation">
+            <h3>How to cite</h3>
+            <pre>
+@article{lee2024programming,
+    title={Programming Refusal with Conditional Activation Steering},
+    author={Lee, Bruce W and Lee, Marcus and Blei, David M},
+    journal={arXiv preprint arXiv:2409.05907},
+    year={2024}
+}
+            </pre>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="https://brucewlee.com">About Bruce W. Lee</a>
+        </div>
+    </footer>
+</body>
+</html>
